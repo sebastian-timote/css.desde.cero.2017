@@ -1,0 +1,209 @@
+/*CONCEPTOS
+
+    selectores      -> nos dice que elementos html se van a ver afectados por los estilos
+        selectores de etiqueta  o tipo    ->usan la etiqueta html del elemento
+    selectores descendientes              ->son selectores separados por un espacio
+                                          el primero es el padre y el segundo es un hijo(o descendiente de cualquier nivel)
+                                          evitar usar el selector descendiende por la especificidad
+    especificidad   ->
+    cascada
+    herencia
+
+CONCEPTOS AVANZADOS
+    box model
+    position
+    flexbox
+
+ */
+/*este es un selector de etiqueta*/
+/*h1{*/
+/*    background:         black;*/
+/*    font-size:          50px;*/
+/*    font-family:        sans-serif;*/
+/*    text-decoration:    underline;*/
+/*    color: white;*/
+/*}*/
+/*este es un selector descendiente padre hijo nieto
+  evitar usar el selector descendiende por la especificidad
+body h1 span{ -> esta mal ya que no hay necesidad de usar el body ya todos los elementos son hijos de body
+    color: red;
+}
+*/
+
+/*hace referencia a los hijos del h1 o los que se encuentran mas abajo*/
+/*h1:nth-child(2){*/
+/*    color: red;*/
+/*}*/
+/*h1:nth-child(3){*/
+/*    color: yellow;*/
+/*}*/
+/*
+se llama bloque de declaracion
+selector {
+    propiedad: valor o keyword;
+}
+ */
+/* todo TIPOS DE DATOS
+
+    header span {
+        transition: left 2s;animacion que va durar 2 s
+        transform: rotate(10deg);voy a rotar 10 grados
+        transform: rotate(2turn);oy a rotar 2 vueltas
+        hacer calculos existen funciones y operaciones
+        margin: calc(10px*2);
+        content: "hola mundo";reconoce string
+    }
+    h1 { podemos redefinir una variable
+    --color: green;
+    background: var(--color);
+    }
+    span {no hay necesidad de esta declaracion ya que segun el html este ya hereda el bcakground
+        background: var(--color);
+    }
+    p {
+        background: var(--color);
+    }
+    body {una vez apliquemos este background este se le definira a todos sus hijos el scope es por padre e hijos
+        --color: red; creacion de variable
+        background: var(--color);
+    }
+*/
+
+
+/*
+todo ESTILO DE TEXTO
+
+cuando escribimos codigo debemos usar las letras monospace ya que todas tienen el mismo grosor
+y no va a ver problemas de alineacion
+los otros tipo de letra no tiene el mismo grosor ej sans serif
+ */
+/*
+h1 {
+    color: lime;color letra
+    font-size: 25px;tamano de la letra
+    font-family: sans-serif;tipo de letra
+    font-family: monospace;tipo de letra
+    font-family: Arial, sans-serif;significa que si la fuente no esta se usa el siguiente tipo
+    font-family: 'Bangers', cursive;letra traida de google
+    line-height: 0;espacio entre texto o interlineado
+
+}
+*/
+/*todo ESTILOS POR DEFECTO DEL NAVEGADOR
+h1 {
+    font-weight: normal;quita la negrita por defecto
+}
+body{
+    margin: 0;quita el margin por defecto del navegador
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+descargamos la libreria que reestablece lo estilos por defecto del navegador llama normalize
+*/
+
+
+/******* todo SELECTORES SIMPLES
+    - selector de etiqueta
+    - selector de id
+    - selector de clase
+
+selectores de tipo o etiqueta html no usar salvo los estilos base
+li {
+    backgroun:yellow;
+}
+selectores de id
+#nombreid {
+}
+ */
+/* .fulano:nth-of-type(2){/*escogemos un elemento en especifico
+    background: red;
+} */
+
+/***************************************|
+|          SELECTORES COMPUESTOS        |                                       
+****************************************/
+/* selectores descendientes -> son separados por un espacio
+padre hijo {
+    estilos
+}
+ancestro descendiente {
+    estilos
+}
+*/
+/* ul span {
+    background: red;
+} */
+
+/*hijos directos (>)  */
+/* ul > span {
+    background: green;
+} */
+/* selector hermano siguiente ->  sele anade solo al primer hermanos siguiente (+)  */
+/* h1 + p {
+    background: lime;
+} */
+/*selectors hermanos siguientes -> plural   (~)  */
+/* h1 ~ p {
+    background: pink;
+} */
+/* combinar selectores (sin espacio)*/
+/* h1.first {
+    color: blue;
+}
+.titel.first{
+    color: olive;
+} */
+/* h1#first {con id
+    color: blue;
+} */
+
+/***************************************|
+|          SELECTORES DE ATRIBUTOS      |                                       
+****************************************/
+/* .class #id
+usan corchetes [] para indicar el atibuto*/
+
+[href]{
+    color: red;
+    font-size: 2em;
+}
+[href = "https://escuela.digital"]{
+    color: green;
+    font-size: 2em;
+}
+[title][href]{
+    color: blue;
+    font-size: 3em;
+}
+/*otraforma*/
+a[title]{
+    color: blue;
+    font-size: 3em;
+}
+
+/*COMODIN ^ (COMIENZA CON)*/
+
+[title^='soy'] {
+    background: yellow;
+}
+[class^="menu-"]{
+    background: yellow;
+}
+/* COMODIN $ (TERMINA EN O TERMINA CON)*/
+[href$='pdf']{
+    display: block;
+    background: 
+    url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/98px-PDF_file_icon.svg.png) left / contain no-repeat;
+    padding-left: 1.5em;
+}
+
+/*COMODIN * (contiene) i = case insensitive*/
+[href*='sea' i]{
+    color: green;
+}
+
+
+
+
