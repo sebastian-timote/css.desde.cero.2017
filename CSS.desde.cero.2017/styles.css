@@ -165,7 +165,7 @@ ancestro descendiente {
 /* .class #id
 usan corchetes [] para indicar el atibuto*/
 
-[href]{
+/* [href]{
     color: red;
     font-size: 2em;
 }
@@ -176,34 +176,230 @@ usan corchetes [] para indicar el atibuto*/
 [title][href]{
     color: blue;
     font-size: 3em;
-}
+} */
 /*otraforma*/
-a[title]{
+/* a[title]{
     color: blue;
     font-size: 3em;
-}
+} */
 
 /*COMODIN ^ (COMIENZA CON)*/
 
-[title^='soy'] {
+/* [title^='soy'] {
     background: yellow;
 }
 [class^="menu-"]{
     background: yellow;
-}
+} */
 /* COMODIN $ (TERMINA EN O TERMINA CON)*/
-[href$='pdf']{
+/* [href$='pdf']{
     display: block;
     background: 
     url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/98px-PDF_file_icon.svg.png) left / contain no-repeat;
     padding-left: 1.5em;
-}
+} */
 
 /*COMODIN * (contiene) i = case insensitive*/
-[href*='sea' i]{
+/* [href*='sea' i]{
     color: green;
-}
+} */
 
+/***************************************|
+|          PSEUDOCLASES                 |                                       
+****************************************/
+/*
+se le pueden implementar a cualquier elemento
+*/
+/* a {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    line-height: 2.5;
+    padding: 0 1em;
+    text-decoration: none;
+} */
+
+/* a:hover {
+    background: darkred;
+    text-decoration: underline;
+} */
+/*coloca el boton mas pequeno al hacer click*/
+/* a:active {
+    transform: scale(0.9);
+} */
+/* cuando un link ya ha sido visitado*/
+/* a:visited {
+
+} */
+
+/* :hover {
+    background: darkred;
+    text-decoration: underline;
+} */
+
+/*como tiene un espacio es un descendiente y se le aplica el hover a todos los hijos*/
+/* body :hover {
+    background: darkred;
+    text-decoration: underline;
+} */
+/* #parrafo {
+    margin-top: 50em;
+    margin-bottom: 50em;
+
+}
+nav {
+    background: #222;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    top: 0;
+}
+a {
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+} */
+/*cuando ocurre una accion */
+/* #parrafo:target {
+    padding-top: 80px;
+} */
+
+/* es la raiz de todo no body si no html*/
+/* :root {
+    background: red;
+} */
+
+/*te indica elementos vacios*/
+/* :empty {
+    
+} */
+/* p {
+    background: yellow;
+    padding: .5em;
+}
+p:empty {
+    display: none;
+} */
+/* :not(selector)si se cumple la condicion no entra recibe cualquier cosa menos otro :not*/
+/* p:not(:empty) {
+    background: lime;
+} */
+
+/***************************************|
+|      PSEUDOCLASES EN FORMULARIOS      |                                       
+****************************************/
+
+/* cuando tenemos el foco de un input*/
+/* input:focus {
+    background: yellow;
+} */
+
+/*:enabled :disabled*/
+/*pordefecto todos los form estan enabled*/
+/* input:enabled {
+    background: red;
+} */
+
+/* input:disabled {
+    background: grey;
+} */
+
+/* :checked */
+/* .elegir:checked + label {
+    font-size: 2em;
+    background: yellow;
+    color: red;
+} */
+
+/* :required :optional*/
+
+/* input:optional {
+    border: 1px solid green;
+}
+input:required {
+    border: 1px solid red;
+} */
+/*esta le asigna a todos los form con input required o optional*/
+/*aqui usamos un selector descendiente por el espacio */
+/*estamos diciendo form que tenga hijos con optional o required les asigna el style*/
+/* form :optional {
+    border: 1px solid green;
+}
+form :required {
+    border: 1px solid red;
+} */
+
+/* :valid  :invalid */
+/* input:valid {
+    background: yellow;
+}
+input:invalid {
+    background: red;
+} */
+
+/* :in-range :out-of-range*/
+/* input:in-range {
+    background: darkblue;
+}
+input:out-of-range{
+    background: darkorchid;
+} */
+
+/***************************************|
+|      PSEUDOCLASES child               |                                       
+****************************************/
+
+/* p:first-child {
+    background: yellow;
+}
+p:last-child {
+    background: pink;
+} */
+/*p:nth-child(even) -> los pares 
+  p:nth-child(odd) -> impares
+  p:nth-child(number) -> numero de hijo
+  p:nth-child(3n) -> cuenta de tres en tres o multiplos de tres
+  p:nth-child(3n + 1) -> es una operacion ej: 3(0)+1=1, 3(1)+1=4, 3(2)+1=7 etc..
+*/
+/* p:nth-child(3n){
+    background: blue;
+    color: #fff;
+} */
+
+/*cuenta de abajo hacia arriba*/
+/* p:nth-last-child(3n){
+    background: blue;
+    color: #fff;
+} */
+
+/*se aplica a elemento solo con un hijo */
+/* p:only-child {
+    background: salmon;
+} */
+/*nth-child -> cuenta los hijos ya sea de div o p o culaquier otro elemento */ 
+/* p:nth-child(3) {
+     background: sandybrown;
+ } */
+
+/***************************************|
+|          PSEUDOCLASES TYPE            |                                       
+****************************************/
+
+/* son iguales a las child()
+:first-child        :first-of-type
+:last-child         :last-of-type
+:nth-child()        :nth-of-type()
+:nth-last-child()   :nth-last-of-type() */
+/*la diferecia con child es que este cuenta los hijos dependiendo del tipo en este ejemplo los de tipo p*/
+
+/* p:nth-of-type(3) {
+    background: teal;
+} */
+.parrafo:nth-of-type(3) {
+    background: teal;
+}
 
 
 
