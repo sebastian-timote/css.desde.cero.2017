@@ -397,9 +397,51 @@ p:last-child {
 /* p:nth-of-type(3) {
     background: teal;
 } */
-.parrafo:nth-of-type(3) {
+/* .parrafo:nth-of-type(3) {
     background: teal;
+} */
+
+/***************************************|
+|          SELECTORES AGRUPADOS         |                                       
+****************************************/
+
+/*se separan por comas */
+/* h1, p {
+    background: firebrick;
+} */
+
+.titulo, .agrupados {
+    text-decoration: underline;
+}
+.titulo {
+    color: tomato;
+}
+.agrupados {
+    color: blue;
 }
 
+/***************************************|
+|          BOX MODEL                    |                                       
+****************************************/
+/*ELEMENTOS INLINE Y BLOCK*/
+/*EN HTML TODO SLOS ELEMENTOS SON RECTANGULOS */
+/*todo lo que se ve en pantalla se llama viewport */
+h1 {
+    background: red;
+    height: 100px;
+    width: 500px;
+}
+/*los estilos width y height no funcionan en elemento inline
+solo funcionan con la linea:
+display: block; -> lo convierte a block
+display: inline-block; -> se usa mucho para botones
+*/
+a {
+    background: yellow;
+    padding: 10px;
+    margin: 20px;
+    height: 100px;
+    width: 500px;
+}
 
 
