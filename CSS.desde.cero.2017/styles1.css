@@ -1,0 +1,359 @@
+/*************POSITION FIXED****************/
+/*
+1. pierde su espacio en el flujo
+2. su contexto es el viewport siempre
+3. sus dimensiones se ajustan al contenido (salvo que se le especifiquen)
+4. se queda fijo en el viewport sin moverse con el scroll
+*/
+
+/* .main-header {
+    background-color: hsl(210, 70%, 50%);
+    color: #eee;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+body {
+    padding-top: 50px;/*para que el position fixedf no tape el parrafo 
+    margin-bottom: 1000px;
+} */
+/**************EJERCICIO POSITION FIXED*********************/
+
+/* .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ddd;
+    width: 25%;
+    height: 100%;
+    overflow: auto;
+}
+.main-menu {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: -0;
+    padding-left: 0;
+}
+.menu-item {
+    border-bottom: solid 1px #bbb;
+}
+.menu-link {
+    display: block;
+    line-height: 3;
+    text-decoration: none;
+    color: #222;
+    padding-left: 1em;
+}
+.main {
+    margin-left: 27%;
+} */
+/*end ejercicio*/
+
+/**************Z-INDEX*********************/
+/* .capa {
+    width: 200px;
+    height: 200px;
+    opacity: .7; 
+    font-size: 3em;
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+    position: relative;
+}
+.uno {
+    background-color: hsl(120, 70%, 50%);
+    left: 200px;
+    z-index: 100;/**no usar numeros correlativos ejemplo:1,2,3   
+}
+.uno::before {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 150px;
+    background: hsl(30, 80%, 50%);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    /*z-index: -100;/*cuando usamos seudo elementos tenemos que quitarle el zindex del padre para que funcione  
+}
+.dos {
+    background-color: hsl(200, 70%, 50%);
+    left: 100px;
+    bottom: 100px;
+    z-index: 200;
+    /* display: none;  
+}
+.tres {
+    background-color: hsl(300, 70%, 50%);
+    bottom: 200px;
+    z-index: 300;
+    /* display: none;  
+} */
+
+/******************* STICKY ******************/
+/*1. es una combinadion entre relative y fixed
+  2. funciona con contenido
+*/
+
+/* body {
+    text-align: center;
+    padding-bottom: 150em;
+}
+ nav {
+     width: 100%;
+     padding: 1em;
+     background: hsl(190, 80%, 50%);
+     color: #fff;
+     position: sticky;
+     top: 50px;
+ } */
+
+/******************* FLEX-BOX ******************/
+/* flexbox requiere de un elemento padre y al menos un hijo.
+
+padre -> flex-container
+hijo directo -> flex-item
+
+padre {
+    display: flex | inline-flex; /*crea un contexto flex para sus hijos
+}
+los hijos (flex-item) son las cajas flexibles
+flex-items pueden ser:
+    - elementos hijos directos del flex-container
+    - pseudo elementos ::before y ::after
+    - el texto
+*/
+/* .container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background: hsl(240, 100%, 90%);
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* flex-direction: column; para cambiar la orientacion */
+    /* flex-direction: row-reverse; */
+    /* align-items: center; */
+    /* align-items: flex-end; 
+
+
+} */
+/* .item {
+    /* align-self: flex-start; */
+    /* order: -1;
+} */
+
+/******************* MAIN-AXIS Y CROSS-AXIS ******************/
+
+/* .container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background: hsl(240, 100%, 90%);
+    /*flex-direction: row-reverse;cambia el main axis de izq a der*/
+    /*flex-direction: column;cambia el main axis a vertical*/
+    /* flex-wrap: nowrap;no salta de linea el flex */
+    /* flex-wrap: wrap;salta de linea */
+    /* flex-wrap: wrap-reverse; ha estas dos lineas las puede reemplazar el flex-flow
+    flex-direction: row-reverse; */
+    /* flex-flow: row-reverse wrap-reverse; */
+    /*********alinecion de eje main axis ******/
+    /* flex-direction: row-reverse; */
+    /*justify-content: flex-start;/*la posicion de esta propiedad sirve para mover el contenido pero dependiendo del sentido el flex direction*/
+    /* justify-content: space-between;/* esta propiedad no deja el margen y deja un espacio entrelos elementos */
+    /* justify-content: space-around;/*esta propiedad deja un margen en los hijos */
+    /********* ALINECION DE EJE SECUNDARIO**********/
+    /* align items -> se usa cuando es una sola linea */
+    /*align-content -> cuando son varias lineas*/
+    /* flex-direction: column; */
+    /*align-items: stretch;/*el height del los items depende del height declarados a ellos*/
+    /*align-items: baseline;/* se alinean deacuerdo a cada elemento*/
+    /*align-items: flex-end;/*manda contenido al final
+    flex-wrap: wrap;
+    /* align-content: center; 
+
+} */
+/* .item {
+    width: 30px;
+    /* height: 30px; 
+    background-color: yellow;
+    text-align: center;
+    line-height: 30px;
+    /* margin: 10px; 
+} */
+/* .item:nth-child(even){
+    background-color: green;
+    color: white;
+} */
+/* .item:nth-child(10){
+    font-size: 50px;
+} */
+/***********sentencias que sele aplican a los hijos de flexbox*********************/
+/*los elementos en el dom todos tienen order cero*/
+/* .item:nth-child(n+23){
+    order: 2;
+}
+.item:nth-child(50){
+    order: 1;
+} */
+/* .item:nth-child(10) {
+    align-self: stretch;
+
+} */
+
+/******************* CAJAS FLEXIBLES ******************/
+/*
+flexbox tiene su propia manera para definir las dimensiones de sus cajas
+flex-basis: main-size inicial
+flex-grow: factor de crecimiento
+flex-shrink: factor de encogimiento
+flex: grow shrink basis reemplaza las otras propiedades
+*/
+/* .container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: hsl(240, 100%, 90%);
+}
+.item {
+    flex:1 0 auto;
+    /*flex: 0 1 200px;/* esta reemplaza las otras  propiedades*/ 
+    /*flex-basis: 100px;/*el flex-basis le gana a el width
+    width: 100px;/*este width no lo respeta flexbox ya que no se puede dar por el width del padre */
+    /*flex-grow: 1;/*tome el espacio disponible y dividalo por la cantidad de elementos hijos y los agranda*/
+    /* height: 30px; 
+    background-color: yellow;
+    text-align: center;
+}
+.item:nth-child(even){
+    background-color: green;
+    color: white;
+}
+.item:nth-child(3){
+    /* flex-grow: 4; 
+    flex-shrink: 4;/*toma el espacio negativo es decir que se pase del container y reduce en este caso el hijo 3
+} */
+
+
+/**************************LAYOUT PERFECTO *********************************/
+/* 
+.header {
+    background-color: hsl(120, 50%, 50%);
+    width: 100%;
+    padding: 2em;
+    /* color: red; 
+}
+.first {
+    background-color: hsl(60, 80%, 50%);
+}
+.main {
+    background-color: hsl(300, 50%, 50%);
+    flex: 0 0 50%;
+}
+.content {
+    display: flex;
+    flex: auto;
+}
+aside {
+    flex: 0 0 25%;
+}
+
+.second {
+    background-color: hsl(200, 90%, 50%);
+}
+.footer {
+    background-color: hsl(180, 50%, 50%);
+    width: 100%;
+    padding: 2em;
+
+}
+
+body {
+    min-height: 100vh;/*decirleque vas a medir lo mismo que el viewport high para que el body no crezca con el contenido
+    display: flex;
+    flex-direction: column;
+
+    /* flex-wrap: wrap; 
+} */
+/*****************MENU CON FLEXBOX***************************/
+/* .menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    background: #333;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: .5em;
+    white-space: nowrap;
+}
+li {
+    position: relative;
+    list-style: none;
+}
+li:hover > ul {
+    display: block;
+}
+li > ul {
+    position: absolute;
+    display: none;
+    background: #333;
+    text-align: center;
+    width: 100%;
+    padding-left: 0;
+}
+li ul ul {
+    left: 100%;
+    top: 0;
+}
+.menu__item {
+    flex: auto;
+} */
+/*************BANNER ANIMADO ***************************/
+* {
+    box-sizing: border-box;
+}
+.banner {
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+}
+.item {
+    display: flex;
+    flex: 1 1 50px;
+    
+}
+.item span {
+    margin: auto;
+    transform: rotate(-90deg);
+    transition: all .3s;
+}
+.item:first-child {
+    background: hsl(40, 80%, 50%);
+}
+.item:nth-child(2) {
+    background: hsl(80, 80%, 50%);
+}
+.item:nth-child(3) {
+    background: hsl(150, 80%, 50%);
+}
+.item:nth-child(4) {
+    background: hsl(210, 80%, 50%);
+}
+
+.item:hover {
+    flex: 10 0 auto;
+    transition: all .3s;
+}
+.item:hover span{
+    transform: none;
+}
+

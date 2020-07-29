@@ -410,7 +410,7 @@ p:last-child {
     background: firebrick;
 } */
 
-.titulo, .agrupados {
+/* .titulo, .agrupados {
     text-decoration: underline;
 }
 .titulo {
@@ -418,30 +418,340 @@ p:last-child {
 }
 .agrupados {
     color: blue;
-}
+} */
 
 /***************************************|
 |          BOX MODEL                    |                                       
 ****************************************/
-/*ELEMENTOS INLINE Y BLOCK*/
+/******************ELEMENTOS INLINE Y BLOCK*******************/
 /*EN HTML TODO SLOS ELEMENTOS SON RECTANGULOS */
 /*todo lo que se ve en pantalla se llama viewport */
-h1 {
+/* h1 {
     background: red;
     height: 100px;
     width: 500px;
-}
+} */
 /*los estilos width y height no funcionan en elemento inline
 solo funcionan con la linea:
 display: block; -> lo convierte a block
 display: inline-block; -> se usa mucho para botones
 */
-a {
+/* a {
     background: yellow;
     padding: 10px;
     margin: 20px;
     height: 100px;
     width: 500px;
+} */
+
+/********************ELEMENTOS INTERNOS***********************
+    contenido -> el texto o los hijos
+    padding -> la distancia entre el final de la caja y el contenido
+    border -> el trazo
+
+*******************ELEMENTOS EXTERNOS*********************
+    margin -> distancia entre una caja y la otra
+*/
+/*.elemento {
+    background: yellow;
+    /*padding: 20px 100px; vertical horizontal
+    padding: 20px; /*todos los lados la misma longitud
+    padding: 20px 40px 60px 80px; /*sentido de las manecillas del reloj up right buttom left
+    padding-top: 20px; /*solo un lado especifico
+    padding: 20px 100px 80px; /*manecillas del reloj pero como falta un dato lo rellena con el left
+    /*margin-right: 100px; los margin right y left si se suman 
+    /*margin-bottom: 150px; los margin top y bottom no se suman se deja el numero del mayor style esto se llama colapsad
+    /* display: inline-block;
+}
+.elemento:nth-child(7) {
+    /* margin-left: 100px;
+    /* margin-top: 180px;
+}*/
+
+/****************** DIMENSIONES DE LAS CAJAS *********************
+
+sindimensiones declaradas
+alto : contenido + padding + border
+ancho : contenido + padding + border
+
+con dimensiones declaradas
+alto : height + padding + border
+ancho : width + padding + border
+*/
+/*!IMPORTANT sino usamos frameworks es bueno poner las siguientes lineas de codigo
+* -> el asterisco es un selector universal, es decir selecciona todos los elementos
+*/
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+/*.caja {
+    display: none;
+    width: 500px;
+    height: 500px;
+    /* border: solid 1px red; 
+    padding: 100px ;
+    /*centra el elemento el margin auto solo funciona con elemento que tengan medidas especificas
+    y con elementos que sean block
+    margin: 5em auto;
+    /*la propiedad box-sizing toma como referencia el width y el height que nosotros asignamos
+    para que sea el mismo height y width computed (computados) por el navegador
+    box-sizing por defecto esta como content-box 
+    /* box-sizing: border-box; 
+    /*********shorthand**********/
+    /* border-style: solid dotted;/*tambien sirven como las manecillas del reloj    
+    border-width: 10px 5px 50px 3px;
+    border-color: red green blue yellow;
+    border-left-color: black;
+    border-top: 20px dashed orange; */
+    /* border: 1px solid;
+    border-bottom: none; */
+    /****** BORDER RADIUS*********** 
+    border: 5px solid red;
+    /*border-radius: 50%;/*shorthand 
+    border-top-left-radius: 20px;
+    border-radius: 100px 200px /50px;/*border-radius: Xup Xright / Y;
+    /* BACKGROUND */
+    /* background-image: url(https://es.seaicons.com/wp-content/uploads/2015/07/Other-html-5-icon.png); 
+    /* background-color: red; */
+    /* background: url(https://es.seaicons.com/wp-content/uploads/2015/07/Other-html-5-icon.png),
+                url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/250px-HTML5_logo_and_wordmark.svg.png),
+              yellow;
+    
+    border: solid 1px red;
+
+    background-repeat: no-repeat;
+    /* background-position: center center; 
+    background-position: bottom right, top left;/*un estilo se le aplica a la primer imagen y el otro a la que le sigue
+    background-size: 50%, 10%; */
+    
+    
+    /* background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/250px-HTML5_logo_and_wordmark.svg.png),
+                url(https://vignette.wikia.nocookie.net/reinoanimalia/images/5/58/Tigre_de_bengala_wiki.png/revision/latest/top-crop/width/360/height/450?cb=20130303105615&path-prefix=es),
+              yellow;
+    border: 20px dotted red;
+    padding: 40px;
+    background-repeat: no-repeat;
+    background-position: bottom right,center;
+    /* background-size: 50%;
+    background-size: cover;/*que cubra todo el contenido 
+    background-size: contain;/*para que no se salga del elemento  
+    background-size: 10%, cover;
+    /*
+    background clip permite saber a que propiedades va afectar el bakground:
+    content-box -> solo afecta al contenido dejan por fuera al padding y al border
+    padding-box -> solos afecta al contenido y al padding
+    border-box -> afecta toda la caja content -padding y border
+    background-clip: content-box;/*dice donde se va a plicar el background 
+    background-origin: content-box;/*dice desde donde se va a tomar el origen de la imagen
+ 
+
+}*/
+/* .gear {
+    width: 300px;
+    height: 300px;
+    padding: 200px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 40px dashed gray;
+    background-clip: padding-box;
+} */
+
+/***************************************|
+|          SEUDOELEMENTOS               |                                       
+****************************************/
+/* .title::before {
+    /*content: 'hola';/*la propiedad content tiene que pasarse asi sea vacio 
+    /* content: url(https://vignette.wikia.nocookie.net/reinoanimalia/images/5/58/Tigre_de_bengala_wiki.png/revision/latest/top-crop/width/360/height/450?cb=20130303105615&path-prefix=es); 
+    /*content: attr(class);/*pasa la clase o otro atrbuto
+    content: '';
+    display: block;
+    width: 200px;
+    height: 200px;
+    background: red;
+
+}
+.title::after {
+    content: ' mundo';
+}
+.download {
+    display: block;
+    margin-bottom: .5em;
+    
+}
+.download::before{
+    margin-right: 5px;
+}
+
+[href$='pdf']::before {
+    content: url(http://icons.iconarchive.com/icons/iynque/flat-ios7-style-documents/24/pdf-icon.png);
+    
+}
+
+[href$='txt']::before {
+    content: url(http://icons.iconarchive.com/icons/hamzasaleem/office-2011/24/Word-icon.png);
+    
+} */
+/***************************************|
+|          FLOAT Y OVERFLOW             |                                       
+****************************************/
+/* .img {
+    /*al usar float este deja de ser un hijo de article aunque lo sea en el html
+    float: right;/* right left none el valor center no existe 
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: -100px;
+}
+article {
+    width: 80%;
+    margin: 1em auto;
+    border: solid 1px red;
+    /*over flow toma el elemento que sea hijo y lo mete dentro del elemento cuando usamos float si el elemento sale 
+    lo oculta
+    el overflow puede tener las sgtes propiedades
+    hidden -> va a esconder los elementos hijos que sobresalgan del padre
+    scroll -> le activa siempre un scroll si el elemento sobresale
+    auto -> le activa un scroll si lo necesita 
+    /* overflow: hidden; 
+    /* este hace que el elemento lo tome como hijo pero lo deja flotar por fuera del elemnto 
+    /* display: table;  
+
+} */
+
+/* pre {
+    width: 100%;
+    /* width: 360px; 
+    border: solid 1px;
+    overflow: auto;/* el scroll aparece si lo necesitamos 
+} */
+/***************************************|
+|          FLUJO Y POSITION             |                                       
+****************************************/
+/* flujo (flow) -> con position rompemos el flujo del html
+    que es elemento posicionado? -> es un elemento que ha salido del flujo por la propiedad position
+    cuando un elemento esta posicionado se sale del flujo, ademas adquiere nuevas propiedades:
+        top
+        right
+        bottom
+        left -> lo mueven para donde le indiques
+        z-index -> el apilamiento de las capas
+    estas propiedades solo funcionan con el position relative, absolute y fixed
+    position: static | relative | absolute | fixed | sticky;
+    static -> es donde estan todos los elementos es decir esta propiedad deja el valor por defecto
+*/
+
+/* h1 {
+    background-color: yellow;
+    display: inline-block;
+}
+p {
+    background-color: pink;
+    margin-top: -50px;
+    
+} */
+
+/*************POSITION RELATIVE****************/
+/*
+1. el elemento conserva su espacio en el flujo
+2. conserva sus dimensiones originales
+3. su contexto es su posicion inicial
+*/
+
+/* div {
+    border: 3px dashed red;
+}
+h1 {
+    background-color: yellow;
+    margin: 0;
+    border-top: solid 1px green;
+    position: relative;
+    /*top: 50px;/*el top es el espacio entre el contexto y la parte superior del element     
+    /*bottom: 50px;/* entre top y bottom gana el top, el bottom no se aplicara,entre ello no funciona la cascada  
+    /*right: 50px;
+    /*left: 50px;/* entre left y right gana el left, el right no se aplicara, entre ellos no funciona la cascada 
+} */
+
+/*************POSITION ABSOLUTE****************/
+/*
+1. el elemento NO conserva su espacio en el flujo si no es especificado
+2. sus dimensiones se adaptan al contenido
+3. su contexto es su ancestro posicionado mas cercano. que quiere decir?
+    que si su padre esta posicionado es decir que tiene un position: absolute | relative | fixed;
+    lo tomara como origen para el elemento absolute.
+    si su padre no esta posicionado busca en el abuelo y asi sucesivamente ,si ninguno esta posicionado toma como 
+    origen el viewport
+*/
+/* .poster {
+    width: 250px;
+    position: relative;
+}
+.poster img{
+    width: 100%;
+    display: block;
+}
+.caption {
+    background-color:rgba(0, 0, 0, .5);
+    color: #fff;
+    position: absolute;
+    top: -100%;
+    overflow: hidden;
+    /* bottom: 0;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ;
+
+}
+.poster:hover .caption {
+    top: 0;
+
+} */
+/*************EJERCICIO MENU DESPLEGABLE  CON FLOAT**************/
+
+.menu ,
+.menu ul {
+    list-style: none;/*quitar viñetas*/
+    margin-top: 0;/*quitar estilos por defecto*/
+    margin-bottom: 0;
+    padding-left: 0;
+    background-color: #333;
+    display: table;/*para que el elemento no se salga del contenido y poder aplicar un background*/
+}
+.menu > li {
+    float: left; 
+}
+.menu li {
+    position: relative;/*para que el position absolute me lo tome como referencia*/
+}
+.menu a {
+    color: #eee;
+    text-decoration: none;/*quitar subrayado de enlaces*/
+    display: block;
+    padding: .5em 1.5em;
+    white-space: nowrap;/*para que el texto no tenga salto de linea y se expanda silo necesita*/
+}
+.menu li > ul {
+    position: absolute;
+    background-color: green;
+    /*width: 140px;/*para quitarle el numero megico y el salto de linea usamos white-space*/
+    display: none;/*para desaparecer todos los hijos de los li*/
+}
+.menu li:hover > ul {
+    display: block;
+}
+.menu ul ul {
+    background-color: red;
+    top: 0;
+    left: 100%;
+}
+.menu li:hover {
+    background-color: rgba(0, 0, 0, .5);
 }
 
 
