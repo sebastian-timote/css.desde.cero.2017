@@ -316,7 +316,7 @@ li ul ul {
     flex: auto;
 } */
 /*************BANNER ANIMADO ***************************/
-* {
+/* * {
     box-sizing: border-box;
 }
 .banner {
@@ -355,5 +355,276 @@ li ul ul {
 }
 .item:hover span{
     transform: none;
+} */
+/***************DISPLAY TABLE **************************/
+/*un uso de display table es para que el elemento se adapte al contenido*/
+/*sirve para limpiar float es decir este contiene los floats
+existen tambien :
+    display: table-row;-> pra que se comporte como una fila
+    display:table-cell; -> para que se comporte como una celda 
+*/
+/* .table {
+    background-color: yellow;
+    /* display: block; 
+    display: table;
+    padding: 1rem;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+h2 {
+    float: left;
+}
+a {
+    float: right;
+} */
+
+/***************CSS EN TABLAS HTML **************************/
+/* * {
+    box-sizing: border-box;
+}
+.table-container {
+    overflow: auto;/*para que aparezca el scroll si es necesario
+}
+table {
+    margin: 2em auto;
+    padding: .5em;
+    border-collapse: collapse;/*sirve para quitar el doble margen en las tablas html*/
+    /*border-spacing: 10px;/*este es para dar una separacion a los margenes de las tablas html
+    table-layout: fixed;/*para que todas las columnas tengan el mismo anchopero hay que darle un width
+    width: 75%;/*este es el width de table-layout
+    min-width: 450px;/*para que no se desmaquete a la hora de mover su ancho el ancho minimo es este
+
+}
+/*en los tr no funcionan las prppiedades
+tr {
+    border: 1px solid green;
+    padding: .5em;
+}
+tr:nth-child(even) {
+    background-color: #eee;
+}
+td {
+    border: 1px solid #ccc;
+    padding: .3em;
+    /*margin: 10px;/*los margin no funcionan en tablas html es otro tipo de layout
+}
+th {
+    background-color: teal;
+    color: #fff;
+    padding: .5em;
+    border-right: 1px solid rgba(255, 255, 255, .5);
+}
+
+th:last-child {
+    border-right: none;
+} */
+
+/***************COLORES **************************/
+/* shortcut es background
+666,fff,333, etc -> son colores neutros*/
+/* body {
+
+    background-color: #59a;
+} */
+/***************RGB **************************/
+/*colores de 0 -255*/
+/* body {
+    /* background-color: rgb(255, 0, 0); 
+    background-color: rgba(255, 0, 0,0.5);/*RedGreenBlueAlfa es transparencia */
+    /*background-color: lime;/*este verde es el mismo color de la paleta rgb
+} */
+
+/*************** HSL **************************/
+/*
+hue = angulo            escala de grados del color en hsl
+saturation =saturacion intensidad del color
+lightness = luz         brillo
+*/
+/* body {
+
+    /* background-color: hsl(350, 100%, 50%); */
+    /* background-color: hsla(350, 100%, 50%, 0.5); 
+}
+button {
+    background: hsl(200, 85%, 50%);
+    border: none;
+    color: white;
+    padding: .5em 1em;
+}
+button:hover {
+    background: hsl(200, 85%, 45%);
+} */
+
+/*************** DEGRADADO **************************/
+
+/*****DEGRADADO LINEAL****/
+/* 
+body {
+    background-image: linear-gradient(red, yellow, green);
+    height: 100vh;/*necesito indicarle un area
+} */
+/*
+porcentaje de rojo puro
+porcentaje de amarillo puro
+*/
+/* body {
+    background-image: linear-gradient(red 10%, yellow 30%, green 45%);
+    height: 100vh;
+} */
+
+/***plantilla block de notas*****/
+/* body {
+    background-image: linear-gradient(
+        hsl(60, 100%, 85%) 98%, 
+        hsl(0, 60%, 45%) 98%
+        );
+    height: 100vh;
+    background-size: 50px;
+} */
+/*****degradado como efecto de filtro***/
+/* body {
+    height: 100vh;
+    background: url(https://www.sortiraparis.com/images/80/1467/534046-visuel-paris-tour-eiffel-2.jpg) center/cover;
+    position: relative;
+}
+body::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        45deg,
+        hsl(60, 100%, 50%), 
+        hsl(0, 100%, 60%)
+        );
+    opacity: .3;
+} */
+/*****degradado en circulo***/
+/* body {
+    height: 100vh;
+    
+    background-image: radial-gradient(
+        circle at 20px 50px,/*algunas variaciones circle | 50% 10% ellipse | circle at 0 0 | circle at 20px 50px
+        hsl(60, 100%, 50%) 50%, 
+        hsl(0, 100%, 50%) 50%
+        );
+} */
+
+/**************************FLEX GRID *********************************/
+/*
+NECESITAMOS UN PAPAA Y UNOS HIJOS
+*/
+/*
+1fr -> es un fraccion de crecimiento
+*/
+/* .grid-container {
+    display: grid;
+    /* grid-template-columns: 200px 300px 1fr; */
+    /*grid-template-columns: 1fr 1fr 1fr;/*todas las colimnas de la misma fraccion
+    grid-template-columns: repeat(3,1fr);/*igual a 1fr 1fr 1fr
+    grid-template-rows: 100px 300px 50px 60px;
+    grid-gap: 5px;/*es el gutter es la separacion entre columnas y filas
+}
+.grid-item {
+    background: hsl(230, 100%, 50%);
+    color: #fff;
+}
+.grid-item:nth-child(even){
+    background: hsl(180, 100%, 30%);
+} */
+/* .grid-item:nth-child(1) {
+    /* grid-column-start: 1;/*toma en cuenta la grid lines
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4; */
+
+    /*estas lineas reemplazana las sentencias grid-column-end y grid column-start*/
+    /*grid-column: 1 / 4;
+    grid-row: 2 / 3;/*empiece en columna 1 y termine en 4 
+    grid-column:2 / span 2 ;/*span significa que ocupe dos lineas
+    
+} */
+/************************** LAYOUT PERFECTO CON GRID *********************************/
+
+/* header {
+    background: hsl(140, 80%, 50%);
+    grid-area: header; 
+}
+footer {
+    background: hsl(30, 80%, 50%);
+    
+}
+aside {
+    background: hsl(170, 80%, 50%);
+} */
+/* main {
+    background: hsl(60, 80%, 50%);
+    /* grid-column: 2; 
+    grid-area: main;
+}
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 60% 20% ;
+    grid-template-rows: 100px 1fr 100px;
+    /*con grid areas
+    grid-template-areas: "header header header" 
+                         "aside1 main aside2"
+                         "footer footer footer";
+    grid-gap: 10px;
+    width: calc(100% - 20px);/*arreglo para el scrull
+} */
+/* header, footer {
+    grid-column: 1/ span 4;
+} */
+/* footer {
+    grid-area: footer;
+    /* grid-row: 3; 
+}
+aside:first-of-type {
+    grid-area: aside1;
+    /* grid-column: 1;
+    grid-row: 2; 
+} */
+
+/************************** TRANSFORMACIONES *********************************/
+/*
+    cuando usamos el transform el eje de coodenadas cambia deja de ser la esquina superior izquierda y 
+    se vuelve el centro del elemento
+     ** el orden de las transformaciones importan ya que las coordenadas cambian
+*/
+* {
+    box-sizing: border-box;
+}
+:root {
+    --size: 300px;
+}
+.container {
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid black;
+    margin: auto;
+}
+.box {
+    background: linear-gradient(
+        transparent 149px,
+        red 149px,
+        red 150px,
+        transparent 150px
+    ),
+      linear-gradient(
+        to left,
+        transparent 149px,
+        lime 149px,
+        lime 150px,
+        transparent 150px
+      );
+    border: 1px solid red;
+    width: var(--size);
+    height: var(--size);
+    opacity: .8;
+    transform: translateX(200px) rotate(50deg)  scaleY(2);
+    /* margin-left: 150px; */
 }
 
