@@ -14,6 +14,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    
 }
 body {
     padding-top: 50px;/*para que el position fixedf no tape el parrafo 
@@ -593,8 +594,15 @@ aside:first-of-type {
     cuando usamos el transform el eje de coodenadas cambia deja de ser la esquina superior izquierda y 
     se vuelve el centro del elemento
      ** el orden de las transformaciones importan ya que las coordenadas cambian
+     ** transform: scale | translate | rotate | skew; -> posibles opciones
+     scale(x=y) | scale(x,y) | scaleX() scaleY() ->agrandar pieza
+     translate(x=y) | translate(x,y) | translateX() translateY() ->mover pieza
+     rotate(x=y) | rotate(x,y) | rotateX() rotateY() ->rotar pieza
+     skew(x=y) | skew(x,y) | skewX() skewY() ->deformar pieza
+
+     
 */
-* {
+/* * {
     box-sizing: border-box;
 }
 :root {
@@ -624,7 +632,225 @@ aside:first-of-type {
     width: var(--size);
     height: var(--size);
     opacity: .8;
-    transform: translateX(200px) rotate(50deg)  scaleY(2);
-    /* margin-left: 150px; */
-}
+    /* transform: translateX(200px) rotate(50deg)  scaleY(2); */
+    /* transform: translate(50%); */
+    /* transform: skew(10deg, 5deg); */
 
+    /* margin-left: 150px; 
+} */
+/**************EJERCICIO DARK VADER*********************/
+
+/* .container {
+    width: 500px;
+    height: 300px;
+    background: url(https://starships.com/wp-content/uploads/darth-vadar-licenced.jpg) center / cover;
+    position: relative;
+}
+.container::before {
+    content: "Darth Vader";
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+    transform: scale(0.01);
+    opacity: 0;
+    transition: all .3s;
+}
+.container:hover::before {
+    transform: scale(1);
+    opacity: 1;
+} */
+/**************EJERCICIO CARD HOVER*********************/
+
+/* .container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: hsl(300, 60%, 70%);
+    margin: auto;
+    overflow: hidden;
+}
+.container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: hsl(160, 80%, 50%);
+    top: 50%;
+    left: -50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.01);
+    transition: all .5s;
+}
+.container:hover::before {
+    transform: scale(3);
+    opacity: 1;
+}
+.container::after {
+    content: "hola mundo";
+    display: block;
+    /* margin: auto; 
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    transform: translate(-200%, 200%);
+    transition: all .5s;
+}
+.container:hover::after {
+    transform: translate(0,0);
+} */
+/**************EJERCICIO CORAZON*********************/
+
+/* .corazon {
+    width: 400px;
+    height: 300px;
+    border: 1px solid red;
+    margin: auto;
+    position: relative;
+}
+.corazon::before,
+.corazon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: red;
+    border-radius: 50% 50% 0 0;
+}
+.corazon::after {
+    left: 50%;
+    transform: rotate(-48deg);
+    transform-origin: bottom left;
+}
+.corazon::before {
+    /* background: none; 
+    transform: rotate(48deg);
+    transform-origin: bottom right;
+} */
+/**************TRANSFORM ORIGIN*********************/
+/* .point {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    transform: rotate(120deg);
+    transform-origin: 100px 100px;
+} */
+/**************TRANSICIONES*********************/
+/*
+transition: tipo tiempo delay;
+tipo -> a que propiedad le vamos a aplicar el transicion
+tiempo -> tiempo que dura la transicion
+delay -> tiempo de espera en el que la transicion se realizara 
+
+    **text-align -> es una propiedad que no se puede animar
+*/
+
+/* h1 {
+    /* color: red;
+    transition: color 3s; 
+    background: red;
+    transition: background 3s;
+}
+h1::before {
+    content: "Hola Mundo";
+    color: #fff;
+    transition: color 3s 3s;/*tipo tiempo delay
+}
+h1:hover {
+    /* color: green; 
+    background: green;
+}
+h1:hover::before {
+    color: yellow;
+} */
+/**************TIME FUNCTION*********************/
+/*
+las transiciones para poder que funcionen necesitan un valor inicial y final de la misma propiedad
+transition: all 1s ease;
+        ease-> desacelera al final es el valor por defecto
+        linear -> la misma velocidad en toda la animacion
+        ease-in -> desacelera al inicio
+        ease-out ->desacelera al final
+        ease-in-out -> desacelera al inicio y al final
+transition-property: all;
+transition-duration: 2s;
+transition-delay: 2s;
+transition-timing-function: ease-in-out;
+*/
+/* .point {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-in-out;
+
+
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+body:hover .point {
+    left: 90%;
+    background: green;
+} */
+/************** ANIMACIONES *********************/
+/*
+    ** no necesitan un cambio de estado como las transiciones como por ejemplo un hover o click
+
+*/
+/* .ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 0 0,
+        hsl(60, 100%, 50%) 25%,
+        hsl(60, 100%, 30%) 70%,
+        hsl(60, 100%, 1%)
+    );
+    animation-name: rebotar;/*dar un nommbre
+    animation-duration: 3s; /*duracion
+    animation-delay: 0s;/*tiempo de espera en cuanto se realizara la animacion
+    animation-direction: alternate;/*inicio a fin  o inicio fin y fin inicio
+    animation-iteration-count: infinite;/*cuantas veces se ejecutara la animacion
+    animation-play-state: running;/*detener animacion o activarla
+    animation-fill-mode: forwards;/*en que estado debe quedar la animacion en su estado inicial o final
+    animation-timing-function: ease-in;/*velocidad de la animacion
+} */
+/**************3D*********************/
+
+/*sin perpective no hay 3d*/
+body {
+    perspective: 500px;
+    /* perspective-origin: right top; */
+    perspective-origin: 40% 60%;
+
+}
+.card {
+    width: 300px;
+    height: 400px;
+    background: red;
+    margin: 1em auto;
+    color: #fff;
+    font-size: 4em;
+    text-align: center;
+    line-height: 400px;
+    transform:  rotateY(25deg) translateZ(250px);
+    /*transform-style: preserve-3d;/*permiten que los hijo sigan teniendo la transformacion 3d del padre sino estaran en un entorno plano*/
+    backface-visibility: hidden;/*cuando el elemento esta de espalda se ocultara*/
+}
