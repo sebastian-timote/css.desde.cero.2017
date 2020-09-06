@@ -1,0 +1,51 @@
+// todo css valido es ala vez  scss valido
+//las varibles se indican con $
+//@import "ruta/al/archivo"
+/*sepueden anidar selectores
+    ej:
+    body {
+        background: red;
+        div {
+            color: red;
+        }
+    }
+*/
+/* construir selectores utilizando ampersan (&)
+    body {
+        background: red;
+        &:hover {-> hace referencia al padreel ampersan repite al padre
+
+        }
+    }
+
+*/
+//VARIABLES
+//Paleta de colores
+$primary-color: hsl(205,80,60);
+$secondary-color: hsl(0,10,10);
+//$third-color: 
+//tipo de dato 1em -> la medida es relativa al padre CAMBIA SEGUN EL CONTEXTO
+//tipo de dato 1rem  y px-> la medida es relativa al html nunca cambian
+
+//TAMANOS DE FUENTE
+
+$m: 16px;
+$xl: $m * 1.5;
+$l: $m * 1.25;
+$s: $m * 0.8;
+$xs: $m * 0.7;
+
+//VARIABLES DE LAYOUT
+$gutter: 16px;
+$max-width: 1200px;//es bueno darle un limite yaque si nos encontramos con u na pantalla mas grande se va a ver feo
+@import "base/normalize";//_normalize.scss se le coloca la linea al piso para cuando se procese con consola no lo tome
+@import "layout/layout";
+@import "theme/header";
+@import "modules/modules";
+@import "base/base";
+@import "theme/menu";
+@import "theme/banner";
+
+
+
+

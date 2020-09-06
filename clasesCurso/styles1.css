@@ -835,13 +835,13 @@ body:hover .point {
 /**************3D*********************/
 
 /*sin perpective no hay 3d*/
-body {
+/* body {
     perspective: 500px;
-    /* perspective-origin: right top; */
+    /* perspective-origin: right top; 
     perspective-origin: 40% 60%;
 
-}
-.card {
+} */
+/* .card {
     width: 300px;
     height: 400px;
     background: red;
@@ -851,6 +851,108 @@ body {
     text-align: center;
     line-height: 400px;
     transform:  rotateY(25deg) translateZ(250px);
-    /*transform-style: preserve-3d;/*permiten que los hijo sigan teniendo la transformacion 3d del padre sino estaran en un entorno plano*/
-    backface-visibility: hidden;/*cuando el elemento esta de espalda se ocultara*/
+    /*transform-style: preserve-3d;/*permiten que los hijo sigan teniendo la transformacion 3d del padre sino estaran en un entorno plano
+    backface-visibility: hidden;/*cuando el elemento esta de espalda se ocultara
+} */
+
+/**************CARD*********************/
+/* .card-container {
+    perspective: 1000px;
 }
+.card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transition: all 2s;
+}
+.card-container:hover .card {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+.card-container:hover .back{
+    backface-visibility: visible;
+
+}
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    color: #fff;
+    font-size: 2em;
+}
+.back {
+    background: green;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+} */
+
+/**************ESFERA*********************/
+/* body {
+    background: #111;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+}
+.sphere {
+    perspective: 4000px;
+    position: relative;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    animation: sphere 2s infinite linear;
+    transform-style: preserve-3d;
+}
+@keyframes sphere {
+    to {
+        transform: rotateY(1turn);
+    }
+}
+.circle {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    border-radius: 50%;
+    position: absolute;
+}
+.circle:nth-child(2) {
+    transform: rotateY(40deg);
+}
+.circle:nth-child(3) {
+    transform: rotateY(80deg);
+}
+.circle:nth-child(4) {
+    transform: rotateY(120deg);
+}
+.circle:nth-child(5) {
+    transform: rotateY(160deg);
+}
+.circle:nth-child(6) {
+    transform: rotateY(200deg);
+}
+.circle:nth-child(7) {
+    transform: rotateY(240deg);
+}
+.circle:nth-child(8) {
+    transform: rotateY(280deg);
+}
+.circle:nth-child(9) {
+    transform: rotateY(320deg);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
