@@ -1,22 +1,29 @@
 .contact-widget {
     display: flex;
+    align-items: center;
     &__icon {
         width: 2em;
         height: 2em;
         background: $secondary-color;
         color: #fff;
         text-align: center;
-        line-height: 2.3em;
-        font-size: 1.5em;
+        font-size: $xl;
+        margin-left: .5em;
+        &.button {
+            line-height: 2.3;
+        }
     }
     &__data {
         margin-left: .5em;
     }
     &__title {
         margin: 0;
+        font-size: $m;
     }
     &__content {
         margin: 0;
+        font-size: $s;
+
     }
 }
 .button {

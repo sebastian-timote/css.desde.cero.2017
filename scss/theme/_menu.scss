@@ -1,5 +1,19 @@
 .main-nav {
     background: $primary-color;
+    // display: none;
+    @media screen and (max-width: 1024px){
+        //desaparece el menu  con el max-height
+        max-height: 0;
+        transition: max-height .3s;
+        &.show {
+            // display: block;
+            max-height: 10000px;
+        }
+    }
+    @media screen and(min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .main-menu {
     list-style: none;
@@ -7,8 +21,14 @@
     margin-top: 0;
     margin-bottom: 0;
     // display: flex;
+    @media screen and(min-width: 1024px) {
+        display: flex;
+    }
     &__item {
         border-bottom: 1px solid rgba(#fff, .5);
+        @media screen and (min-width: 1024px) {
+            border-bottom: none;
+        }
     }
     &__link {
         display: block;
@@ -16,6 +36,17 @@
         padding: 0 1em;
         text-decoration: none;
         color: #fff;
+    }
+}
+.toggle-menu {
+    color: $primary-color;
+    display: table;
+    font-size: 1.6em;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    @media screen and(min-width: 1024px) {
+        display: none;
     }
 }
 .social-networks {
