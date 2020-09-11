@@ -1,0 +1,47 @@
+.main-menu {
+    background: $primary-color;
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    @media screen and(min-width: 640px) {
+        justify-content: center;
+    }
+    @media screen and(min-width: 1024px) {
+        background: none;
+        justify-content: flex-end;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        margin: 0 .8em;
+        text-transform: uppercase;
+        font-size: $s;
+        color: #fff;
+        display: block;
+        line-height: 2.5;
+        @media screen and(min-width: 640px) {
+            margin: 0 2em;
+            
+        }
+        @media screen and(min-width: 1024px) {
+            color: $primary-color;
+            padding: 0 1em;
+            margin: 0 1em;
+            
+        }
+        &:hover{
+            background: $primary-color;
+            color: #fff;
+            text-decoration: none;
+            
+        }
+        
+        &:active {
+            background: none;
+        }
+        
+    }
+}

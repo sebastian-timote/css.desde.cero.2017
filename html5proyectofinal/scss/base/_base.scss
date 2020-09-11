@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;//quitar scroll feo 
+}
+body {
+    font-size: $m;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    color: $texto;
+}
+img {
+    max-width: 100%;
+}
