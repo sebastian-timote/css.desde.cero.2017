@@ -856,7 +856,7 @@ body:hover .point {
 } */
 
 /**************CARD*********************/
-/* .card-container {
+.card-container {
     perspective: 1000px;
 }
 .card {
@@ -888,7 +888,7 @@ body:hover .point {
     background: green;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-} */
+}
 
 /**************ESFERA*********************/
 /* body {
